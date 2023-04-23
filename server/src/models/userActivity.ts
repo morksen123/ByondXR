@@ -1,4 +1,4 @@
-import mongoose, { Document, model, Schema } from "mongoose";
+import { Document, model, Schema } from "mongoose";
 
 interface UserActivityData {
   board_id: Schema.Types.ObjectId;

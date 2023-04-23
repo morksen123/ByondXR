@@ -1,4 +1,4 @@
-import { Schema } from "mongoose";
+import { model, Schema } from "mongoose";
 const userActivitySchema = new Schema({
     page: {
         type: String,
@@ -19,3 +19,5 @@ const userActivitySchema = new Schema({
         },
     },
 });
+const UserActivity = model('UserActivity', userActivitySchema);
+export default UserActivity;
