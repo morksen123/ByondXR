@@ -1,5 +1,7 @@
 import { ThemeProvider, createTheme } from "@mui/material";
 import ClippedDrawer from "./components/Drawer/ClippedDrawer";
+import Showroom from "./components/Showroom/Showroom";
+import Board from "./components/Board/Board";
 
 function App() {
   // const theme = createTheme({
@@ -13,6 +15,7 @@ function App() {
     <div>
       {/* <ThemeProvider theme={theme}> */}
         <ClippedDrawer/>
+        {/* <Showroom name="my showroom"/> */}
     {/* </ThemeProvider> */}
     </div>
   );
