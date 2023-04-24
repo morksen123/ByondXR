@@ -5,6 +5,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Toolbar from "@mui/material/Toolbar";
 import DenseAppBar from "../AppBar/DenseAppBar";
 import DrawerList from "./components/ListDrawer";
+import Showroom from "../Showroom/Showroom";
 
 const drawerWidth = 280;
 
@@ -43,6 +44,11 @@ export default function ClippedDrawer() {
           <DrawerList data={drawerSections.productBoard} />
         </Box>
       </Drawer>
+      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+        <Toolbar />
+        <Showroom name="my showroom"/>
+        
+      </Box>
     </Box>
   );
 }
