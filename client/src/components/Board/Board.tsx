@@ -1,14 +1,9 @@
 import { Box, Typography } from "@mui/material";
 import "./Board.css";
+import { BoardInterface } from "../../types/showroom.types";
 
-interface BoardProps {
-  id: number;
-  title: string;
-  imageLink: string;
-}
-
-export default function Board(props: BoardProps) {
-  const { id, title, imageLink } = props;
+export default function Board(props: BoardInterface) {
+  const { title, image } = props;
 
   return (
     <div className="container">
@@ -26,7 +21,7 @@ export default function Board(props: BoardProps) {
       <Box
         component="img"
         alt="board image"
-        src={imageLink}
+        src={image}
         style={{ marginBottom: 50}}
         sx={{
           height: 570,

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import ClippedDrawer from "./components/Drawer/ClippedDrawer";
+import Showroom from "./components/Showroom/Showroom";
 
 function App() {
   const handleGlobalEvent = (event: MouseEvent) => {
@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div>
-      <ClippedDrawer/>
+      <Showroom name="my showroom"/>
     </div>
   );
 }

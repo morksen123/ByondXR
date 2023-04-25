@@ -1,10 +1,10 @@
 export interface ShowroomInterface {
   _id: number;
   title: string;
-  boards: Board[];
+  boards: BoardInterface[];
 }
 
-export interface Board {
+export interface BoardInterface {
   id: number;
   title: string;
   image: string;

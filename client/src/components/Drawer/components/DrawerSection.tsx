@@ -5,16 +5,16 @@ import {
   ListItemButton,
   ListItemText,
 } from "@mui/material";
-import "./ListDrawer.css";
+import "./DrawerSection.css";
 import { useMutation } from "@apollo/client";
 import { ADD_USER_ACTIVITY } from "../../../graphql/Mutations";
 
-interface DrawerListProps {
+interface DrawerSectionProps {
   id: string;
   data: string[];
 }
 
-const DrawerList = (props: DrawerListProps) => {
+const DrawerSection = (props: DrawerSectionProps) => {
   const { data } = props;
 
   const [addUserActivity] = useMutation(ADD_USER_ACTIVITY);
@@ -61,4 +61,4 @@ const DrawerList = (props: DrawerListProps) => {
   );
 };
 
-export default DrawerList;
+export default DrawerSection;

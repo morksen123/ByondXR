@@ -2,8 +2,7 @@ import { useQuery } from "@apollo/client";
 import { GET_SHOWROOM } from "../../graphql/Queries";
 import { useEffect, useState } from "react";
 import { ShowroomInterface } from "../../types/showroom.types";
-import Board from "../Board/Board";
-import CircularIndicator from "../ActivityIndicator/CircularIndicator";
+import ClippedDrawer from "../Drawer/ClippedDrawer";
 
 interface ShowroomProps {
   name: string;
@@ -32,14 +31,8 @@ export default function Showroom(props: ShowroomProps) {
   }, [showroomData]);
 
   return (
-    <>
-      {showroomData ? (
-        showroomData.boards?.map((board) => (
-          <Board key={board.image} id={board.id} title={board.title} imageLink={board.image} />
-        ))
-      ) : (
-        <CircularIndicator />
-      )}
-    </>
+    <ClippedDrawer
+      data={showroomData}
+    />
   );
 }
