@@ -8,6 +8,9 @@ import {
 import "./DrawerSection.css";
 import { useMutation } from "@apollo/client";
 import { ADD_USER_ACTIVITY } from "../../../graphql/Mutations";
+import {
+  Link,
+} from "react-scroll";
 
 interface DrawerSectionProps {
   id: string;
@@ -44,15 +47,17 @@ const DrawerSection = (props: DrawerSectionProps) => {
       <List>
         {data.map((text, index) => (
           <ListItem key={index} style={{ paddingTop: 0, paddingBottom: 0 }}>
-            <ListItemButton onClick={handleAddUserActivity}>
-              <ListItemText>
-                {index === 0 ? (
-                  <span className="Header">{text}</span>
-                ) : (
-                  <span>{text}</span>
-                )}
-              </ListItemText>
-            </ListItemButton>
+            <Link to={text} smooth duration={300} style={{ width: "100%" }}>
+              <ListItemButton onClick={handleAddUserActivity}>
+                <ListItemText>
+                  {index === 0 ? (
+                    <span className="Header">{text}</span>
+                  ) : (
+                    <span>{text}</span>
+                  )}
+                </ListItemText>
+              </ListItemButton>
+            </Link>
           </ListItem>
         ))}
       </List>

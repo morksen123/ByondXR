@@ -6,7 +6,7 @@ export default function Board(props: BoardInterface) {
   const { title, image } = props;
 
   return (
-    <div className="container">
+    <div id={title} className="container">
       <Typography variant="h3" color={"#474747"} fontFamily={"hel"} marginBottom={"10px"}>
         {title}
       </Typography>

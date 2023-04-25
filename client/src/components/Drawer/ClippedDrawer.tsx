@@ -11,6 +11,7 @@ interface ClipperDrawerProps {
   data?: ShowroomInterface
 }
 
+// main component
 export default function ClippedDrawer(props: ClipperDrawerProps) {
   const { data } = props
 
