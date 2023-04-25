@@ -36,7 +36,7 @@ const DrawerSection = (props: DrawerSectionProps) => {
       timestamp: Date.now().toString(),
       page: showroomData.title,
       entity_id: showroomData._id,
-      event_type: `${name}_DRAWER_CLICK`,
+      event_type: "drawer_click",
       data: {
         board_id: boardId,
       },

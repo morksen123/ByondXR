@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/client";
 import { GET_SHOWROOM } from "../../graphql/Queries";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import ClippedDrawer from "../Drawer/ClippedDrawer";
 import { ShowroomContext } from "../../contexts/showRoomContext";
 
@@ -13,7 +13,7 @@ export default function Showroom(props: ShowroomProps) {
     variables: { name: props.name },
   });
 
-  const { showroomData, setShowroomData } = useContext(ShowroomContext)
+  const { setShowroomData } = useContext(ShowroomContext)
 
   useEffect(() => {
     if (error) {
@@ -24,13 +24,7 @@ export default function Showroom(props: ShowroomProps) {
     }
   }, [data]);
 
-  useEffect(() => {
-    console.log(showroomData);
-  }, [showroomData]);
-
   return (
-    <ClippedDrawer
-      data={showroomData}
-    />
+    <ClippedDrawer/>
   );
 }

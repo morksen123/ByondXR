@@ -1,13 +1,45 @@
 import { Box, Typography } from "@mui/material";
 import "./Board.css";
-import { BoardInterface } from "../../types/showroom.types";
+import { BoardInterface, ShowroomInterface } from "../../types/showroom.types";
+import { useMutation } from "@apollo/client";
+import { ADD_USER_ACTIVITY } from "../../graphql/Mutations";
 
-export default function Board(props: BoardInterface) {
-  const { title, image } = props;
+type BoardProps = BoardInterface & {
+  showroomData: ShowroomInterface;
+};
+
+export default function Board(props: BoardProps) {
+  const { _id, title, image, showroomData } = props;
+  const [addUserActivity] = useMutation(ADD_USER_ACTIVITY);
+
+  const handleMouseEnter = () => {
+    const input = {
+      timestamp: Date.now().toString(),
+      page: showroomData.title,
+      entity_id: showroomData._id,
+      event_type: "board_mouse_enter",
+      data: {
+        board_id: _id,
+      },
+    };
+
+    addUserActivity({ variables: { input: input } })
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   return (
-    <div id={title} className="container">
-      <Typography variant="h3" color={"#474747"} fontFamily={"hel"} marginBottom={"10px"}>
+    <div id={title} className="container" onMouseEnter={handleMouseEnter}>
+      <Typography
+        variant="h3"
+        color={"#474747"}
+        fontFamily={"hel"}
+        marginBottom={"10px"}
+      >
         {title}
       </Typography>
       <Typography paragraph>
@@ -22,7 +54,7 @@ export default function Board(props: BoardInterface) {
         component="img"
         alt="board image"
         src={image}
-        style={{ marginBottom: 50}}
+        style={{ marginBottom: 50 }}
         sx={{
           height: 570,
           width: 850,

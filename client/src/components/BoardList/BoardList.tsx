@@ -1,23 +1,23 @@
 import Board from "../Board/Board";
 import CircularIndicator from "../ActivityIndicator/CircularIndicator";
-import { BoardInterface } from "../../types/showroom.types";
+import { useContext } from "react";
+import { ShowroomContext } from "../../contexts/showRoomContext";
 
-interface BoardListProps {
-  boards: BoardInterface[] | undefined;
-}
+interface BoardListProps {}
 
 export default function BoardList(props: BoardListProps) {
-  const { boards } = props;
+  const { showroomData } = useContext(ShowroomContext);
 
   return (
     <>
-      {boards ? (
-        boards.map((board) => (
+      {showroomData ? (
+        showroomData.boards.map((board) => (
           <Board
             key={board.image}
             _id={board._id}
             title={board.title}
             image={board.image}
+            showroomData={showroomData}
           />
         ))
       ) : (
