@@ -15,7 +15,7 @@ interface DrawerListProps {
 }
 
 const DrawerList = (props: DrawerListProps) => {
-  const { id, data } = props;
+  const { data } = props;
 
   const [addUserActivity] = useMutation(ADD_USER_ACTIVITY);
 
