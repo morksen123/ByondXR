@@ -1,11 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-} from "@apollo/client";
+import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import { ShowroomProvider } from "./contexts/showRoomContext";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -18,6 +15,8 @@ const client = new ApolloClient({
 
 root.render(
   <ApolloProvider client={client}>
-    <App />
+    <ShowroomProvider>
+      <App />
+    </ShowroomProvider>
   </ApolloProvider>
 );

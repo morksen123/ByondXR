@@ -15,7 +15,7 @@ export default function BoardList(props: BoardListProps) {
         boards.map((board) => (
           <Board
             key={board.image}
-            id={board.id}
+            _id={board._id}
             title={board.title}
             image={board.image}
           />

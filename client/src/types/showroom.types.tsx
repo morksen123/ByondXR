@@ -1,11 +1,11 @@
 export interface ShowroomInterface {
-  _id: number;
+  _id: string;
   title: string;
   boards: BoardInterface[];
 }
 
 export interface BoardInterface {
-  id: number;
+  _id: string;
   title: string;
   image: string;
 }
@@ -17,4 +17,9 @@ export enum DrawerSections {
   CONCEPT = "concept",
   PRODUCT = "product",
   PRODUCT_BOARD = "product-board",
+}
+
+export type ShowroomContextType = {
+  showroomData: ShowroomInterface
+  setShowroomData: (data: ShowroomInterface) => void
 }

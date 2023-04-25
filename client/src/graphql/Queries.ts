@@ -6,7 +6,7 @@ export const GET_SHOWROOM = gql`
       _id
       title
       boards {
-        id
+        _id
         image
         title
       }
