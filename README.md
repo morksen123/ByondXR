@@ -25,7 +25,7 @@
 2. Configuration and importing the required packages for the server was time consuming
 3. Code organisation of graphql code can be neater
 4. Unsure of the effectiveness of my user activity tracking feature
-    - Currently, the mutation function to create a UserActivity document works (tested with dummy data on the frontend)
+    - Currently, the mutation function to create a UserActivity document works 
     - These are the 2 approaches I have attempted:
         - Approach 1: Used an event listener but it ended up logging too much info (commented out)
         - Approach 2: Utilised event trigger functions of component to call the endpoint (implemented)
