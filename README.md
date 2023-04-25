@@ -1,13 +1,12 @@
 # Candidate assessment
 
-## Approach
+## How I approached the task
 
 1. Set up backend (localhost:4000)
 2. Tested queries/mutations on Apollo playground
 3. Set up frontend (localhost:3000)
 4. Test endpoint and persistence of data
 5. Enhance UI 
-
 
 ## What went well
 1. Maximised component based architecture of React
