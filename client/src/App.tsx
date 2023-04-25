@@ -1,22 +1,25 @@
-import { ThemeProvider, createTheme } from "@mui/material";
+import { useEffect } from "react";
 import ClippedDrawer from "./components/Drawer/ClippedDrawer";
-import Showroom from "./components/Showroom/Showroom";
-import Board from "./components/Board/Board";
 
 function App() {
-  // const theme = createTheme({
-  //   palette: {
-  //     primary: {
-  //       main: '#000000', // Set the default color for icons to black
-  //     },
-  //   },
-  // });
+  const handleGlobalEvent = (event: MouseEvent) => {
+    switch (event.type) {
+      case "click": 
+        const targetElement = event.target
+        console.log(targetElement)
+    }
+  };
+  
+  useEffect(() => {
+    document.addEventListener("click", handleGlobalEvent);
+    return () => {
+      document.removeEventListener("click", handleGlobalEvent);
+    };
+  }, []);
+
   return (
     <div>
-      {/* <ThemeProvider theme={theme}> */}
-        <ClippedDrawer/>
-        {/* <Showroom name="my showroom"/> */}
-    {/* </ThemeProvider> */}
+      <ClippedDrawer/>
     </div>
   );
 }

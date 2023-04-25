@@ -2,7 +2,7 @@ import { Box, Typography } from "@mui/material";
 import "./Board.css";
 
 interface BoardProps {
-  id: Number;
+  id: number;
   title: string;
   imageLink: string;
 }
@@ -12,7 +12,7 @@ export default function Board(props: BoardProps) {
 
   return (
     <div className="container">
-      <Typography variant="h3" color={"#474747"} fontFamily={"hel"}>
+      <Typography variant="h3" color={"#474747"} fontFamily={"hel"} marginBottom={"10px"}>
         {title}
       </Typography>
       <Typography paragraph>
@@ -29,8 +29,8 @@ export default function Board(props: BoardProps) {
         src={imageLink}
         style={{ marginBottom: 50}}
         sx={{
-          height: 650,
-          width: 800,
+          height: 570,
+          width: 850,
         }}
       />
     </div>

@@ -35,7 +35,7 @@ export default function Showroom(props: ShowroomProps) {
     <>
       {showroomData ? (
         showroomData.boards?.map((board) => (
-          <Board id={board.id} title={board.title} imageLink={board.image} />
+          <Board key={board.image} id={board.id} title={board.title} imageLink={board.image} />
         ))
       ) : (
         <CircularIndicator />

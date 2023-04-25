@@ -7,12 +7,11 @@ import SearchIcon from "@mui/icons-material/Search";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import "./DenseAppBar.css";
-import { Colors } from "../../constants/Colors";
 
 export default function DenseAppBar() {
-  const handleOnClick = () => {
-    console.log("passed");
-  };
+  // const handleOnClick = () => {
+  //   console.log("passed");
+  // };
 
   return (
     <Box>
@@ -21,29 +20,30 @@ export default function DenseAppBar() {
         sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
       >
         <Toolbar variant="regular" className="Tool-bar">
-          <div style={{ display: "flex", alignItems: "center" }}>
-            <ArrowBackIcon style={{ color: Colors.BLACK, marginRight: 20 }} />
+          <div className="Typography-icon">
+            <ArrowBackIcon className="Arrow-back-icon" />
             <Typography
+              className="Black-theme"
               variant="h5"
               fontWeight="bold"
-              color={Colors.BLACK}
               style={{ marginRight: 50 }}
             >
               VAN HEUSEN
             </Typography>
             <div style={{ display: "flex", alignItems: "center" }}>
               <Typography
+                className="Black-theme"
                 variant="subtitle1"
-                color={Colors.BLACK}
                 fontWeight="100"
               >
                 Brands
               </Typography>
-              <ArrowDropDownIcon style={{ color: Colors.BLACK }} />
+              <ArrowDropDownIcon className="Black-theme" />
             </div>
           </div>
-          <IconButton sx={{ mr: 2 }} onClick={handleOnClick}>
-            <SearchIcon style={{ color: Colors.BLACK }} />
+          {/* <IconButton sx={{ mr: 2 }} onClick={handleOnClick}> */}
+          <IconButton sx={{ mr: 2 }}>
+            <SearchIcon className="Black-theme" />
           </IconButton>
         </Toolbar>
       </AppBar>

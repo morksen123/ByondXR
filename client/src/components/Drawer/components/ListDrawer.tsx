@@ -1,19 +1,50 @@
-import { Divider, List, ListItem, ListItemButton, ListItemText } from "@mui/material";
-import './ListDrawer.css'
+import {
+  Divider,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+} from "@mui/material";
+import "./ListDrawer.css";
+import { useMutation } from "@apollo/client";
+import { ADD_USER_ACTIVITY } from "../../../graphql/Mutations";
 
 interface DrawerListProps {
+  id: string;
   data: string[];
 }
 
 const DrawerList = (props: DrawerListProps) => {
-  const { data } = props;
+  const { id, data } = props;
+
+  const [addUserActivity] = useMutation(ADD_USER_ACTIVITY);
+
+  const handleAddUserActivity = () => {
+    const input = {
+      timestamp: Date.now().toString(),
+      page: "my showroom",
+      entity_id: "6444b528ba622c36d2bcb2be",
+      event_type: "click",
+      data: {
+        board_id: "6444b528ba622c36d2bcb2be",
+      },
+    };
+
+    addUserActivity({ variables: { input: input } })
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   return (
     <>
       <List>
         {data.map((text, index) => (
-          <ListItem key={text} className="List-item">
-            <ListItemButton>
+          <ListItem key={index} style={{ paddingTop: 0, paddingBottom: 0 }}>
+            <ListItemButton onClick={handleAddUserActivity}>
               <ListItemText>
                 {index === 0 ? (
                   <span className="Header">{text}</span>
@@ -30,4 +61,4 @@ const DrawerList = (props: DrawerListProps) => {
   );
 };
 
-export default DrawerList; 
+export default DrawerList;

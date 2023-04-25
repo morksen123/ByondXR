@@ -6,19 +6,15 @@ import Toolbar from "@mui/material/Toolbar";
 import DenseAppBar from "../AppBar/DenseAppBar";
 import DrawerList from "./components/ListDrawer";
 import Showroom from "../Showroom/Showroom";
+import { drawerSections } from "./layout/DrawerLayout";
 
 const drawerWidth = 280;
 
-const drawerSections = {
-  brandBook: ["Brand Book", "Introduction video", "Van Heusen Brandbook"],
-  seasonalStories: ["Seasonal Stories"],
-  seasonalColors: ["Seasonal Colors"],
-  concept: ["Concept"],
-  product: ["Product", "Traveler", "Never Tuck", "Flex", "Key Looks"],
-  productBoard: ["Product Board"],
-};
+interface ClipperDrawerProps {
+}
 
-export default function ClippedDrawer() {
+export default function ClippedDrawer(props: ClipperDrawerProps) {
+
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
@@ -36,20 +32,36 @@ export default function ClippedDrawer() {
       >
         <Toolbar />
         <Box sx={{ overflow: "hidden" }}>
-          <DrawerList data={drawerSections.brandBook} />
-          <DrawerList data={drawerSections.seasonalStories} />
-          <DrawerList data={drawerSections.seasonalColors} />
-          <DrawerList data={drawerSections.concept} />
-          <DrawerList data={drawerSections.product} />
-          <DrawerList data={drawerSections.productBoard} />
+          <DrawerList
+            id={drawerSections.brandBook.id}
+            data={drawerSections.brandBook.subSections}
+          />
+          <DrawerList
+            id={drawerSections.seasonalStories.id}
+            data={drawerSections.seasonalStories.subSections}
+          />
+          <DrawerList
+            id={drawerSections.seasonalColors.id}
+            data={drawerSections.seasonalColors.subSections}
+          />
+          <DrawerList
+            id={drawerSections.concept.id}
+            data={drawerSections.concept.subSections}
+          />
+          <DrawerList
+            id={drawerSections.product.id}
+            data={drawerSections.product.subSections}
+          />
+          <DrawerList
+            id={drawerSections.productBoard.id}
+            data={drawerSections.productBoard.subSections}
+          />
         </Box>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <Toolbar />
-        <Showroom name="my showroom"/>
-        
+        <Showroom name="my showroom" />
       </Box>
     </Box>
   );
 }
-
