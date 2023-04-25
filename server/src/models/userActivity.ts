@@ -5,7 +5,7 @@ interface UserActivityData {
 }
 
 interface UserActivity extends Document {
-  timestamp: string;
+  timestamp: Date;
   page: string;
   entity_id: Schema.Types.ObjectId;
   event_type: string;
@@ -13,6 +13,9 @@ interface UserActivity extends Document {
 }
 
 const userActivitySchema = new Schema<UserActivity>({
+  timestamp: {
+    type: Date
+  },
   page: {
     type: String,
     required: true,

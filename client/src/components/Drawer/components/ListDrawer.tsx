@@ -1,4 +1,5 @@
 import { Divider, List, ListItem, ListItemButton, ListItemText } from "@mui/material";
+import './ListDrawer.css'
 
 interface DrawerListProps {
   data: string[];
@@ -6,15 +7,16 @@ interface DrawerListProps {
 
 const DrawerList = (props: DrawerListProps) => {
   const { data } = props;
+
   return (
     <>
       <List>
         {data.map((text, index) => (
-          <ListItem key={text} style={{ paddingTop: 0, paddingBottom: 0 }}>
+          <ListItem key={text} className="List-item">
             <ListItemButton>
               <ListItemText>
                 {index === 0 ? (
-                  <span style={{ fontWeight: "bold" }}>{text}</span>
+                  <span className="Header">{text}</span>
                 ) : (
                   <span>{text}</span>
                 )}
