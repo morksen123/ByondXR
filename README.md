@@ -20,14 +20,13 @@
 1. Hardcoded some component props due to incomplete website architecture. E.g, ```<Showroom name="my showroom"/>```
 2. Configuration and importing the required packages for the server was time consuming
 3. Code organisation of graphql code can be neater
-4. I was unable to fully implement the user activity tracking feature by the deadline
+4. Unsure of the effectiveness of my user activity tracking feature
     - Currently, the mutation function to create a UserActivity document works (tested with dummy data on the frontend)
-    - However, I have not found an effective method of tracking the user activity data
     - These are the 2 approaches I have attempted:
-        - Approach 1: Used an event listener but it ended up logging too much info
-        - Approach 2: Utilised onClick function of component to call the endpoint 
+        - Approach 1: Used an event listener but it ended up logging too much info (commented out)
+        - Approach 2: Utilised event trigger functions of component to call the endpoint (implemented)
    
 
 ## Summary 
-Overall, it was a fun assignment! Throughout these 2.5 days, I learnt a lot about graphql and its difference from RESTful APIs. 
+Overall, it was a fun assignment! Throughout these 3 days, I learnt a lot about graphql and its difference from RESTful APIs. 
 I would love to hear your feedback on my work and how I can improve as an engineer :-)
