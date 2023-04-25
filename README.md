@@ -1,2 +1,2 @@
 # ByondXR
-ByondXR take home assignment 
+Candidate assessment
