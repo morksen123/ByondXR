@@ -1,8 +1,8 @@
 import { useQuery } from "@apollo/client";
 import { GET_SHOWROOM } from "../../graphql/Queries";
-import { useEffect, useState } from "react";
-import { ShowroomInterface } from "../../types/showroom.types";
+import { useContext, useEffect, useState } from "react";
 import ClippedDrawer from "../Drawer/ClippedDrawer";
+import { ShowroomContext } from "../../contexts/showRoomContext";
 
 interface ShowroomProps {
   name: string;
@@ -13,9 +13,7 @@ export default function Showroom(props: ShowroomProps) {
     variables: { name: props.name },
   });
 
-  const [showroomData, setShowroomData] = useState<
-    ShowroomInterface | undefined
-  >();
+  const { showroomData, setShowroomData } = useContext(ShowroomContext)
 
   useEffect(() => {
     if (error) {

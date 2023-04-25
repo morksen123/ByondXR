@@ -7,7 +7,7 @@ const typeDefs = `#graphql
   }
 
   type Board {
-    id: ID
+    _id: ID
     title: String
     image: String
   }
