@@ -1,7 +1,11 @@
 # Candidate assessment
 
-## How I approached the task
+## Getting started
+1. git clone
+2. cd server -> npm start (start server + mongoDB connection)
+3. cd client -> npm install -> npm start
 
+## How I approached the task
 1. Set up the backend (localhost:4000)
 2. Tested queries/mutations on Apollo playground
 3. Set up the frontend (localhost:3000)
