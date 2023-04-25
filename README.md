@@ -21,8 +21,6 @@
 2. Enhanced Material UI components (Drawer, appbar, etc.)
 3. Utilised Apollo playground for testing before implementation 
 4. Used a combination of MongoDB Atlas, compass and Apollo playground to visualise data
-5. Utilised interfaces in both frontend and backend
-
 
 ## Challenges
 1. Hardcoded some component props due to incomplete website architecture. E.g, ```<Showroom name="my showroom"/>```
