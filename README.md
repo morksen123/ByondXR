@@ -1,6 +1,6 @@
-# ByondXR
+# Candidate assessment
 
-# Approach
+## Approach
 
 1. Set up backend (localhost:4000)
 2. Tested queries/mutations on Apollo playground
@@ -9,7 +9,7 @@
 5. Enhance UI 
 
 
-# What went well
+## What went well
 1. Maximised component based architecture of React
 2. Enhanced Material UI components (Drawer, appbar, etc.)
 3. Utilised Apollo playground for testing before implementation 
@@ -17,7 +17,7 @@
 5. Utilised interfaces in both frontend and backend
 
 
-# Challenges
+## Challenges
 1. Hardcoded some component props due to incomplete website architecture. E.g, ```<Showroom name="my showroom"/>```
 2. Configuration and packages in server was time consuming
 3. Code organisation of graphql code can be neater
@@ -26,7 +26,7 @@
     - Approach 1: Used an event listener but it ended up logging too much info
     - Approach 2: Utilised onClick function of component to call the endpoint 
    
-   
-# Summary 
+
+## Summary 
 Overall, it was a fun assignment! Throughout these 2.5 days, I learnt a lot about graphql and its difference from RESTful APIs. 
 I would love to hear your feedback on my work and how I can improve as an engineer :-)
