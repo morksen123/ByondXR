@@ -13,7 +13,7 @@
 1. Set up the backend (localhost:4000)
 2. Tested queries/mutations on Apollo playground
 3. Set up the frontend (localhost:3000)
-4. Tested endpoints from frontned and checked if the data was saved in mongoDB
+4. Tested endpoints from frontend and checked if the data was saved in mongoDB
 5. Enhance UI 
 
 ## What went well
@@ -25,7 +25,7 @@
 ## Challenges
 1. Hardcoded some component props due to incomplete website architecture. E.g, ```<Showroom name="my showroom"/>```
 2. Configuration and importing the required packages for the server was time consuming
-3. Unsure of the effectiveness of my user activity tracking feature
+3. Effectiveness of my user activity tracking feature
     - Currently, the mutation function to create a UserActivity document works 
     - These are the 2 approaches I have attempted:
         - Approach 1: Used an event listener but it ended up logging too much info (commented out)
